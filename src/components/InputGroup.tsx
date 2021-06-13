@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-import { Grid, Typography, TextField } from '@material-ui/core';
+import { Grid, Typography, TextField, Box } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-  inputgroup: {
-    marginTop: 30,
-  },
-});
 
 function InputGroup(props: any) {
-  const classes = useStyles();
   const { group_id } = props;
 
   const top100Films = ['', 'textvalue1', 'textvalue2', 'textvalue3', 'textvalue4', 'textvalue5'];
@@ -24,10 +16,8 @@ function InputGroup(props: any) {
   };
 
   return (
-    <React.Fragment>
-      <Typography variant="h4" className={classes.inputgroup}>
-        Group {group_id}
-      </Typography>
+    <Box m={1}>
+      <Typography variant="h4">Group {group_id}</Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={4}>
           <Autocomplete
@@ -62,7 +52,7 @@ function InputGroup(props: any) {
           />
         </Grid>
       </Grid>
-    </React.Fragment>
+    </Box>
   );
 }
 
